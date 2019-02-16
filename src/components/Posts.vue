@@ -10,7 +10,7 @@
           <v-card-title primary-title>
             <div>
               <h3 class="headline mb-0">{{ post.author }}</h3>
-              <div>{{ post.filename }}</div>
+              <div>{{ getAuthorUserName(post.author_url) }}</div>
             </div>
           </v-card-title>
 
@@ -46,17 +46,20 @@
         }
 
         return array;
+      },
+      getSrc(id) {
+        const imagePostWidth = 250;
+        const imagePostHeight = 375;
+        return 'https://picsum.photos/' + imagePostWidth + '/' + imagePostHeight + '?image=' + id;
+      },
+      getAuthorUserName(str) {
+        return str.substring(str.lastIndexOf('@'))
       }
     },
     data() {
       return {
         loading: true,
-        posts: [],
-        getSrc(id) {
-          const imagePostWidth = 250;
-          const imagePostHeight = 375;
-          return 'https://picsum.photos/' + imagePostWidth + '/' + imagePostHeight + '?image=' + id;
-        }
+        posts: []
       }
     },
     created() {
