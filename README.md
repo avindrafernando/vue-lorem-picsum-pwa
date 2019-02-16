@@ -1,4 +1,4 @@
-# vue-sample-app
+# vue-lorem-picsum
 
 ## Project setup
 ```
