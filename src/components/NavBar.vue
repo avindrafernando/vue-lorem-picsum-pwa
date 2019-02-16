@@ -40,7 +40,7 @@
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped" color="deep-purple">
       <v-toolbar-side-icon class="white--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">I am NOT a PWA</v-toolbar-title>
+      <v-toolbar-title class="white--text">I am a PWA</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>      
     <v-content>

@@ -1,4 +1,4 @@
-# vue-lorem-picsum
+# vue-lorem-picsum-pwa
 
 ## Project setup
 ```

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Welcome to I am NOT a PWA
+      Welcome to I am a PWA
     </h1>
     <p>
       Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy
