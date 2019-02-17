@@ -4,6 +4,7 @@ import './plugins/vuetify'
 import App from './App.vue'
 import Home from './components/Home.vue'
 import Posts from './components/Posts.vue'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
