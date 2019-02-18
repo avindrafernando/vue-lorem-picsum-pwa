@@ -10,5 +10,11 @@ module.exports = {
           // proxy: 'http://localhost:8080'  // open it if you meet a problem in docker env.
           // https: false,
       }
+  },
+  pwa: {
+    workboxPluginMode: "InjectManifest",
+    workboxOptions: {
+      swSrc: "src/service-worker.js"
+    }
   }
 }
