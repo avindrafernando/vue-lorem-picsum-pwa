@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Service Workers - ByteConf 2019</title>
+
+		<meta name="description" content="ByteConf 2019 - Avindra talk">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-silver-green">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="e5e9bf85c3a3971699174b8af955e15b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 95px; height: auto;" data-block-id="bbd4805081e8b4edaf39edbd85a75c06"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="background-color: rgba(0, 0, 0, 0);">
+<h1>Service Workers:</h1>
+
+<h2>Transforming Your App Into a Progressive Web App</h2>
+</div></div></section><section data-id="87576d38b676a3b374d215883d95ade7"><div class="sl-block" data-block-type="text" style="width: 806px; left: 78px; top: 92px; height: auto;" data-block-id="3bd9a4c107099a040fab481b37c6a977"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Who Am I?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 386px; left: 174px; top: 331px; height: auto;" data-block-id="e35b33432ee2f30eab69a108e5cae7bb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>@avindrafernando</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="23706759dcda5704f498dd68c4b37e7f" style="min-width: 4px; min-height: 4px; width: 119px; height: 119px; left: 55px; top: 296px;"><a class="sl-block-content" style="z-index: 13;" href="https://twitter.com/avindrafernando" target="_blank"><img style="" data-natural-width="1280" data-natural-height="1280" data-lazy-loaded="" data-src="deck-5-12/ed2f8716dbdf5955215a2c1f7ffafe1b.png"></a></div>
+<div class="sl-block" data-block-type="image" data-block-id="bc57d6ce821ec996fb984fcaf577b533" style="min-width: 4px; min-height: 4px; width: 69px; height: 69px; left: 80px; top: 410px;"><a class="sl-block-content" style="z-index: 14;" href="https://medium.com/@avindra1" target="_blank"><img data-natural-width="195" data-natural-height="195" style="" data-lazy-loaded="" data-src="deck-5-12/cb272a02f021906dabf97685844104d7.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 232px; left: 174px; top: 420px; height: auto;" data-block-id="2450fed38bcbf8d66dbce4680991843e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15;">
+<h3>@avindra1</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="e9836c3060f2b6166ea03bb9283d5734" style="min-width: 4px; min-height: 4px; width: 77px; height: 77px; left: 72px; top: 500px;"><a class="sl-block-content" style="z-index: 16;" href="https://github.com/avindrafernando" target="_blank"><img style="" data-natural-width="1280" data-natural-height="1280" data-lazy-loaded="" data-src="deck-5-12/4a52bc7ba0cb349e47ec409288a8f80e.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 370px; left: 174px; top: 513px; height: auto;" data-block-id="b41db3aa5aff49d607b593fd4189ae0e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 17;">
+<h3>avindrafernando</h3>
+</div></div></section><section data-id="fa61077fa5721381aaa79dad6d91e45c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="daacd484bcea2feb8b21cd45a90a5a79"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Meet Jason</h1>
+</div></div></section><section data-id="797fb4c2a7a65e29a63b11bcfeda366f" data-background-image="deck-5-12/721b431bcce243705b2b42a72d80e922"></section><section data-id="6e928f58c55d60c6583f7e027cd61fb6"><div class="sl-block" data-block-type="image" data-block-id="4f6334015ab96aae255e9a1569b7bf36" style="min-width: 4px; min-height: 4px; width: 806px; height: 304px; left: 77px; top: 198px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1000" data-natural-height="377" style="" data-lazy-loaded="" data-src="deck-5-12/5fb63e0b747f996d4dc920861c1016f1.png"></div></div></section><section data-id="0573408e8b3ea684981f6942aa67060b"><div class="sl-block" data-block-type="image" data-block-id="6eb2b807d4aed51f3329f7933a066810" style="min-width: 4px; min-height: 4px; width: 465px; height: 700px; left: 247px; top: 0px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1920" data-natural-height="2888" style="" data-lazy-loaded="" data-src="deck-5-12/878a18af73695036b5dbc3b64432d1cb"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="435af9c40f0f2b6c3e5a3ec2ab8373d6" style="min-width: 4px; min-height: 4px; width: 196px; height: 110px; left: 382px; top: 70px;"><div class="sl-block-content fragment" style="z-index: 12; border-width: 1px;" href="" data-fragment-index="0"><img data-natural-width="300" data-natural-height="168" style="" data-lazy-loaded="" data-src="deck-5-12/4764d45962ec1857326d4695295eee78.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="6e041e445f54f20b77cb12fc5f7ae9b3" style="height: auto; min-width: 30px; min-height: 30px; width: 166px; left: 794px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" dir="ui" data-has-custom-html="">
+<p><span style="font-size:0.3em"><span style="color:rgb(17, 17, 17); text-align:start">Photo by </span><a href="https://unsplash.com/photos/Y58Sww9SR1c?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Philip Veater</a><span style="color:rgb(17, 17, 17); text-align:start"> on </span><a href="https://unsplash.com/search/photos/lego-help?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a></span></p>
+</div></div></section><section data-id="57c09871c14283b2e379048d380b2562" data-background-image="deck-5-12/99fe7c7008c9e6c755b0cf8da19091d8.jpg"></section><section data-id="daef9b0232716cd922dc68f13b04da3d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="95cf17c4769700e467bb71f21e83eb16"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>So why did Jason get nervous?</h1>
+</div></div></section><section data-id="a702f70596c3ff253f73865a5ba7996d"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="57bd745397af0fb8bc3cc28adb864d1e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Native Apps</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="41d29e63d9b1a8dc0e70e94f68e44816" style="min-width: 4px; min-height: 4px; width: 806px; height: 409px; left: 77px; top: 184px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1280" data-natural-height="649" style="" data-lazy-loaded="" data-src="deck-5-12/aa0c91d77b39b135a8e7870a71328e37.png"></div></div></section><section data-id="e4625c571c064266335b36c18d5723fe"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="a754379d0e93e6d4edb072639257c9dc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Hybrid Apps</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="182c41f21e496e58457b45314b95e5a3" style="min-width: 4px; min-height: 4px; width: 800px; height: 533px; left: 80px; top: 140px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1073" data-natural-height="715" data-lazy-loaded="" data-src="deck-5-12/319b7b46821d08b35aba4b04b620f81e.jpg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="d8f83523a4246bcc9e8ccbcd3845886c" style="height: auto; min-width: 30px; min-height: 30px; width: 298px; left: 331px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Johanna Gaßmann [CC BY-SA 3.0], from Wikimedia Commons</span></p>
+</div></div></section><section data-id="f5734b63c70afc62218e9a2380169a78"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="d1fbf9f86b67c6644948793130c33e87"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Cross-Platform Native Apps</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="dfcf625611cfacb6d584171609154ccb" style="min-width: 4px; min-height: 4px; width: 410px; height: 172px; left: 35px; top: 229px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="968" data-natural-height="406" data-lazy-loaded="" data-src="deck-5-12/e56cc7a3c9d106e9eabe719ff9f5caf3.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="21a2747c7fe010c2c520ca09b6ae3e17" style="min-width: 4px; min-height: 4px; width: 400px; height: 210px; left: 520px; top: 210px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1200" data-natural-height="630" data-lazy-loaded="" data-src="deck-5-12/181ea9c750b37f5c1157808256cbd539.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="eec46900700dac49edc95743b524cc9f" style="min-width: 4px; min-height: 4px; width: 158px; height: 158px; left: 762px; top: 472px;"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="1"><img data-natural-width="1024" data-natural-height="1024" style="" data-lazy-loaded="" data-src="deck-5-12/aebada7066ed09098420a1ca53a19db2.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="a466894f27fba15cf18f2508a9f552ff" style="min-width: 4px; min-height: 4px; width: 158px; height: 158px; left: 520px; top: 472px;"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="1"><img data-natural-width="512" data-natural-height="512" style="" data-lazy-loaded="" data-src="deck-5-12/da5d052d37f3376c36336148edcd9723.jpg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="2fbfbae2368f9cc2ccc46ad6499d5580" style="height: auto; min-width: 30px; min-height: 30px; width: 449px; left: 16px; top: 472px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="0">
+<p><span style="font-size:1.2em">Xamarin.iOS</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 449px; left: 16px; top: 566px;" data-block-id="ac4d93ac14712fd04a2f9467cf661b9e"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-fragment-index="0">
+<p><span style="font-size:1.2em">Xamarin.Andriod</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="2a019bd21f790f7c556d402bdc4c311f" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 103px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;" data-has-custom-html="">
+<p><span style="font-size:0.2em">By Xamarin [Public domain], via Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="4f8ad99eb5105857205f78924882c5dc" style="height: auto; min-width: 30px; min-height: 30px; width: 192px; left: 624px; top: 642px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19;" data-has-custom-html="">
+<p><span style="font-size:0.2em">By Mostafiz93 [CC BY-SA 4.0], from Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="48b824b40ef5ee07706f6481c2505167" style="height: auto; min-width: 30px; min-height: 30px; width: 259px; left: 591px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;" data-has-custom-html="">
+<p><span style="font-size:0.2em;">By Google Inc. (Android.com) [Apache License 2.0 or CC BY 2.5], via Wikimedia Commons</span></p>
+</div></div>
+</section><section data-id="67488e07ddc6d6b9cfa3dd1216b97bfa"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="5ac45c4613ff32db4168faf7e59a9d54"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Mobile Web</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="b46e1a76ae01703c34ce73407523fa3d" style="min-width: 4px; min-height: 4px; width: 806px; height: 537px; left: 77px; top: 140px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="2025" data-natural-height="1350" data-lazy-loaded="" data-src="deck-5-12/676aed5445a245788615d6e18c69a0d8.jpg"></div></div></section><section data-id="5c0b50bf669e7a46f80b0d050fa151fc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 136px; height: auto;" data-block-id="ee12bf748f9dd71967e7a5683b26b49b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Is it even possible?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 233px; height: auto;" data-block-id="1e42d7741e4a4ee2a8c1cefd95237220"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Offline experience</li>
+	<li>Works well on slow internet connections</li>
+	<li>Seamless installation experience</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="cc9be68b795df64a330df9cbc8939357" style="min-width: 4px; min-height: 4px; width: 500px; height: 228px; left: 230px; top: 402px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="500" data-natural-height="228" style="" data-lazy-loaded="" data-src="deck-5-12/f44c030f819f4670ff90c8e640bf1eb3.gif"></div></div></section><section data-id="672f5cf81b636c0ec7b42d48682e86f6"><div class="sl-block" data-block-type="image" data-block-id="ba63c6cb2c07d5096aa3cb867018cb69" style="min-width: 4px; min-height: 4px; width: 806px; height: 304px; left: 77px; top: 198px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1000" data-natural-height="377" style="" data-lazy-loaded="" data-src="deck-5-12/5fb63e0b747f996d4dc920861c1016f1.png"></div></div></section><section data-id="d738ea351fa59b560a90527719bca4c4"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 155px; height: auto;" data-block-id="8572d324e7589824a1808b554b9821c4"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1 style="text-align:justify">PWA<br>
+Principles</h1>
+</div></div></section><section data-id="5d7ba6c656a50ad1b39d1a102a2fe39d"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="425737af2c27169698230c2654f913cc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Reliable</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 158px; height: auto;" data-block-id="27ded576992cded6183415d30d75c94b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span style="color:rgb(33, 33, 33)">Load instantly and never show the downasaur, even in uncertain network conditions.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="390e5df6821427a05812208a18de680e" style="min-width: 4px; min-height: 4px; width: 196px; height: 196px; left: 480px; top: 462px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img data-natural-width="1280" data-natural-height="1280" style="" data-lazy-loaded="" data-src="deck-5-12/d035756955b7798ba4535ff53252b62f.png"></div></div>
+
+<div class="sl-block" data-block-type="image" data-block-id="b12c6eb7eac33b15fbc25fac3cef401b" style="min-width: 4px; min-height: 4px; width: 196px; height: 196px; left: 764px; top: 462px;"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="1"><img data-natural-width="1280" data-natural-height="1280" style="" data-lazy-loaded="" data-src="deck-5-12/cbbe66652aaa196997aad1df13bda6e0.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7d32b03827125b2215da994a90cb55c8" style="min-width: 4px; min-height: 4px; width: 480px; height: 339px; left: 480px; top: 70px;"><div class="sl-block-content" style="z-index: 15;"><img data-natural-width="1280" data-natural-height="904" style="" data-lazy-loaded="" data-src="deck-5-12/00002b6817ca3d0b5346a285816d94a5.jpg"></div></div></section><section data-id="9d7cf6c706f51a4244d6ccb6a3a47ca6"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="77df33628d434a45cbe6d9702d9430e3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Fast</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 28px; top: 158px; height: auto;" data-block-id="2576f3edc4f70eda015a544630a14d50"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span style="color:rgb(33, 33, 33)">Respond quickly to user interactions with silky smooth animations and no janky scrolling.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7eb2a59b36a88384f1d41a7fd0172ef0" style="min-width: 4px; min-height: 4px; width: 497px; height: 518px; left: 463px; top: 91px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1229" data-natural-height="1280" style="" data-lazy-loaded="" data-src="deck-5-12/ffb343c165432fe99d76fd726d316f72.jpg"></div></div></section><section data-id="8d8bcd907d7f0dc20bb4a0d7abcdb555"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="c69896c595a51f613c58c5daebed4e5c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>Engaging</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 28px; top: 158px; height: auto;" data-block-id="741b78889de52fa4b91a57551d32f965"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span style="color:rgb(33, 33, 33)">Feel like a natural app on the device, with an immersive user experience.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="9bb2b84ed6aae2236d808a3fbe34035c" style="min-width: 4px; min-height: 4px; width: 441px; height: 567px; left: 519px; top: 67px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="995" data-natural-height="1280" style="" data-lazy-loaded="" data-src="deck-5-12/b1aebf05a7e07822646c2aab44d54b37.png"></div></div></section><section data-id="0947d52b42bb5a3382f8f577865c4db3"><div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 58px; height: auto;" data-block-id="cbd64f4c24943c1b8f026a1bcfda4edc"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11;" data-placeholder-text="Text">
+<h1>The<br>
+Secret<br>
+Sauce</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="4dcf4d0bbd87e13aa03b877acbb2aa03" style="min-width: 4px; min-height: 4px; width: 381px; height: 405px; left: 579px; top: 148px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1204" data-natural-height="1280" style="" data-lazy-loaded="" data-src="deck-5-12/6f84ff1be88a37abbe6bf4d8dd7f0ac0.png"></div></div></section><section data-id="2ee2a122a1c05c2f372bc953040ac302"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="d0ceab3e944deb25686e174fddd93347"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Web App Manifest</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 210px; height: auto;" data-block-id="2e7914fb10b7d62f18f791f8035cc6d8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<blockquote>
+<h3>The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the users mobile device or desktop.</h3>
+
+<p> </p>
+
+<p>- The Web App Manifest by Matt Gaunt and Paul Kinlan</p>
+</blockquote>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 277px; left: 342px; top: 661px;" data-block-id="3614ee766bea9bdae4998a601840448f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">The Web App Manifest</a> by Matt Gaunt and Paul Kinlan [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="628e22c0972d9e89babd44cd5f6debce"><div class="sl-block" data-block-type="image" data-block-id="33e06b57d9c1ce23ac67369794fb0b54" style="min-width: 4px; min-height: 4px; width: 393px; height: 700px; left: 284px; top: 0px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="480" data-natural-height="854" style="" data-lazy-loaded="" data-src="deck-5-12/f9854aa0e62bd36d331a7757ce16b1e3.gif"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="993b1ea2a070f26f2c7e4e1ea7f20a4d" style="height: auto; min-width: 30px; min-height: 30px; width: 277px; left: 683px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-has-custom-html="">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">The Web App Manifest</a> by Matt Gaunt and Paul Kinlan [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="b5e3b9b0874d3a779b427b5ef7eb3f13"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 113px; height: auto;" data-block-id="ffbd4b90bc26e97e1e97d6209bab803a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Service Worker</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 323px; height: auto;" data-block-id="087da6077e2470ace92e3bc5132b4fae"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<blockquote>
+<h3>At its simplest, a service worker is a script that runs in the web browser and manages caching for an application.</h3>
+</blockquote>
+
+<p> </p>
+
+<p>- Angular Service Worker Introduction</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 277px; left: 342px; top: 661px;" data-block-id="fdc4379a4914f5a25947395244a2d409"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="">
+<p><span style="font-size:0.3em"><a href="https://angular.io/guide/service-worker-intro" target="_blank">Angular service worker introduction</a> [<span class="cc-license-identifier">CC BY 4.0</span>]</span></p>
+</div></div></section><section data-id="bdb3f4cd16baf186385e65abc84e0cea"><div class="sl-block" data-block-type="image" data-block-id="ce2748666d0c8fb7f4f107a30d5adfe1" style="min-width: 4px; min-height: 4px; width: 700px; height: 700px; left: 130px; top: 0px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1350" data-natural-height="1350" data-lazy-loaded="" data-src="deck-5-12/c392585f0df001b03aa626dcacfdaf9b.jpg"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="57655545d2b33a882a867cd3ef27e712" style="min-width: 4px; min-height: 4px; width: 700px; height: 700px; left: 130px; top: 0px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img style="" data-natural-width="1350" data-natural-height="1350" data-lazy-loaded="" data-src="deck-5-12/63a0b6c54afcd14573cd2c3eadb1003b.jpg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="e516161958376ebfada4271b7e98da06" style="height: auto; min-width: 30px; min-height: 30px; width: 121px; left: 839px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="">
+<p><span style="font-size:0.3em">Designed by freepik.com</span></p>
+</div></div></section><section data-id="f2eb7dd1153346cb4cdd43bf94f83602"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 210px; height: auto;" data-block-id="394369198e7a87f4f561d30d99286cb0"><div class="sl-block-content" data-placeholder-tag="h1" style="text-align: left; z-index: 10; color: rgb(61, 133, 198);" data-placeholder-text="Text">
+<h1 style="text-align: center;"><span style="font-size:1.0em">Service Worker Architecture</span></h1>
+</div></div></section><section data-id="dce195c9b11a61909715063709d6173c"><div class="sl-block" data-block-type="image" style="width: 702px; height: 685px; left: 129px; top: 8px; min-width: 4px; min-height: 4px;" data-block-id="ecb473c27706685a1944afa8f7b6d3ba"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="702" data-natural-height="685" style="" data-lazy-loaded="" data-src="deck-5-12/f5730775c4abdc2a81390781819e6b7f.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 252px; left: 708px; top: 661px;" data-block-id="73e1d3d60a2dd50d648f0739d30f2e7c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-has-custom-html="" dir="ui">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Workers: an Introduction</a> by Matt Gaunt [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="1d86bbfc6fac52dc34568bc5cb1de97b"><div class="sl-block" data-block-type="image" data-block-id="c2d24841a78530b6ad0efdc6cc6930ee" style="min-width: 4px; min-height: 4px; width: 700px; height: 338px; left: 130px; top: 191px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="574" data-natural-height="277" style="" data-lazy-loaded="" data-src="deck-5-12/74856c7e852998dbd78af13a9fb8a1ce.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 277px; left: 342px; top: 661px;" data-block-id="47bf1542d1b65f221970889382e4df8d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-has-custom-html="">
+<p><span style="font-size:0.3em"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers" target="_blank">Using Service Workers</a> [<span class="cc-license-identifier">CC BY 2.5</span>]</span></p>
+</div></div></section><section data-id="2b5d947e9592489cee20305f0b732a3b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 113px; height: auto;" data-block-id="f4a7c353549b1857efb34b01163468d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Push Notifications</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="e22c4e4e12bf0ddaa0212b047eba5be8" style="min-width: 4px; min-height: 4px; width: 806px; height: 215px; left: 80px; top: 243px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="883" data-natural-height="235" data-lazy-loaded="" data-src="deck-5-12/6aae89084427ee51ecbeae76bb817734.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 252px; left: 354px; top: 661px;" data-block-id="5690503af14a36e0948fc1b60bb8bb62"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="" dir="ui">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/push-notifications/how-push-works" target="_blank">How Push Works</a> by Matt Gaunt [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="4d6aecf27cc36b6b8475ba88bd594c89"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 113px; height: auto;" data-block-id="cf54c9fca0299ac619795dc265d1bf9c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Push Notifications</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 806px; height: 222px; left: 80px; top: 239.5px; min-width: 4px; min-height: 4px;" data-block-id="8b7aee42c36761f1bcd95d86bd08d042"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="854" data-natural-height="235" data-lazy-loaded="" data-src="deck-5-12/cc1bf7535f684dcb4a6ab3fce72f198f.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 252px; left: 351px; top: 661px;" data-block-id="817fa803f5ac59e503e936bdf559f809"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="" dir="ui">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/push-notifications/how-push-works" target="_blank">How Push Works</a> by Matt Gaunt [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="0a1936f5eb05d56b61ef8e0b7440e743"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 113px; height: auto;" data-block-id="0e26a8ab5d2e6c21bbddda5238b94a4e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Push Notifications</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 806px; height: 239px; left: 80px; top: 231.5px; min-width: 4px; min-height: 4px;" data-block-id="cb599e67ca1fd9ecd604d99913c4889d"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="808" data-natural-height="240" data-lazy-loaded="" data-src="deck-5-12/2f9f365f586753b01457deaac9e6706c.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 252px; left: 354px; top: 661px;" data-block-id="bfe8ada04bfd82868d66d9a44c1d3f0a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-has-custom-html="" dir="ui">
+<p><span style="font-size:0.3em"><a href="https://developers.google.com/web/fundamentals/push-notifications/how-push-works" target="_blank">How Push Works</a> by Matt Gaunt [<span class="cc-license-identifier">CC BY 3.0</span>]</span></p>
+</div></div></section><section data-id="119a6c651664ae8b190e5c49a8d19b29"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="da1cc471fd904f406ffd9d6d6a7d9d5c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>SW: Can I Use?</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="c66b10bf4528cfbdb83dd17ef7cbc74c" style="min-width: 4px; min-height: 4px; width: 960px; height: 461px; left: 0px; top: 190px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="2500" data-natural-height="1200" style="" data-lazy-loaded="" data-src="deck-5-12/0853ef3375d818020ff302b11dd94ef9.png"></div></div></section><section data-id="3d8d0785a8fa56f09e24a43c3b01ac05"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 70px; height: auto;" data-block-id="cf86d68ac71978242c5fdc6629553c3f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Batteries Included</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 240px; height: 240px; left: 77px; top: 300px;" data-block-id="27ad72d32645e2e428c6b97b745eb3fa"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1024" data-natural-height="1024" style="" data-lazy-loaded="" data-src="deck-5-12/7723ef16ff2aabe8166bc80638d934a9.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="8eb241e4db7edade975892bb9d1595a1" style="min-width: 4px; min-height: 4px; width: 339px; height: 240px; left: 311px; top: 300px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1024" data-natural-height="724" style="" data-lazy-loaded="" data-src="deck-5-12/f3d91fd660edf0cd588fa620cf1b1448.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="5256ad7f44ce87f093308bd557b4a405" style="min-width: 4px; min-height: 4px; width: 217px; height: 188px; left: 666px; top: 326px;"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="262" data-natural-height="227" style="" data-lazy-loaded="" data-src="deck-5-12/4358efb89552ff43b283776cda975a1a.svg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="3ca252d1d7eeee1065da7d7873171114" style="height: auto; min-width: 30px; min-height: 30px; width: 227px; left: 84px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Google [CC BY 4.0], via Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="1b3dc75a274bad2afa055cfac1f19ef9" style="height: auto; min-width: 30px; min-height: 30px; width: 300px; left: 330px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-has-custom-html="">
+<p><span style="font-size:0.3em">Facebook [Public domain or CC BY-SA 1.0], via Wikimedia Commons</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="faf8f0e7f1b04cea1a0f119f42685ce8" style="height: auto; min-width: 30px; min-height: 30px; width: 231px; left: 659px; top: 661px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Evan You [CC BY 4.0], via Wikimedia Commons</span></p>
+</div></div></section><section data-id="4d114c2f6019d1ed4841965d5dd62506"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 302px; height: auto;" data-block-id="b94058d03af6371713ea15829c2b77a0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Vue CLI 3.0+</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 399px; height: auto;" data-block-id="aa04f18a43bb4f13442cade5dfc8a5ca"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h2>Service Workers Built In</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" data-block-id="b5a9f42e72821d1ef77ca34c21993131" style="min-width: 30px; min-height: 30px; width: 356px; height: 44px; left: 302px; top: 516px;"><div class="sl-block-content notranslate fragment" style="z-index: 12; font-size: 150%; border-width: 1px;" data-highlight-theme="ir-black" data-fragment-index="0"><pre class="json"><code>@vue/cli-plugin-pwa
+</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 356px; height: 44px; left: 302px; top: 586px;" data-block-id="e8e0a76fc70d034d7c66d333564a234d"><div class="sl-block-content notranslate fragment" style="z-index: 13; font-size: 150%; border-width: 1px;" data-highlight-theme="ir-black" data-fragment-index="1"><pre class="json"><code>register-service-worker
+</code></pre></div></div>
+
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 217px; height: 188px; left: 369px; top: 46px;" data-block-id="4cf940e4c07574e5e7191c392e1524d3"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="262" data-natural-height="227" style="" data-lazy-loaded="" data-src="deck-5-12/4358efb89552ff43b283776cda975a1a.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 231px; left: 365px; top: 661px;" data-block-id="2ac6cfcf94352ea0058d0643c1f36550"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-has-custom-html="">
+<p><span style="font-size:0.3em">By Evan You [CC BY 4.0], via Wikimedia Commons</span></p>
+</div></div></section><section data-id="19bba59e805df8b6767bcba51451ebe0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="9d55da75f8f8af1eadb605503abebf3d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
+<h1>@vue/cli-plugin-pwa</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="9de296ed84aa7253d9a2561bf2f66a72" style="min-width: 30px; min-height: 30px; width: 361px; height: 54px; left: 300px; top: 436px;"><div class="sl-block-content notranslate" style="z-index: 10; font-size: 200%; border-style: solid; border-width: 1px;" data-highlight-theme="ir-black"><pre class="none"><code>vue add @vue/pwa
+</code></pre></div></div></section><section data-id="8136e027affdf340db48818bd8f9e52f"><div class="sl-block" data-block-type="image" data-block-id="a03771e1574a6fb1d10b15ef08e6d3d5" style="min-width: 4px; min-height: 4px; width: 960px; height: 456px; left: 0px; top: 122px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1786" data-natural-height="848" data-lazy-loaded="" data-src="deck-5-12/6bc3722b045a84d6f60f8837ca13c782.png"></div></div></section><section data-id="3bf29df51b5a93a6c00800e906edcf4f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 0px; height: auto;" data-block-id="9e37c347ed81c79f25fa665ce0b1d7c8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>package.json</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="b2d06fb0eeac3d5c5cb0c31d685401ce" style="min-width: 4px; min-height: 4px; width: 734px; height: 601px; left: 113px; top: 99px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1388" data-natural-height="1136" style="" data-lazy-loaded="" data-src="deck-5-12/a9363ef5fdd9311f36e6b7821461ebb8.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="0511670f6343557284fcabe7d1530f70" style="min-width: 4px; min-height: 4px; width: 481px; height: 36px; left: 204px; top: 204px;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#cc0000" data-shape-stroke-width="3px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 481 36"><defs><clippath id="shape-mask-1-1550464113794"><rect width="481" height="36" rx="0" ry="0"></rect></clippath></defs><rect width="481" height="36" rx="0" ry="0" clip-path="url(#shape-mask-1-1550464113794)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#cc0000" stroke-width="6"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 481px; height: 36px; left: 204px; top: 424px;" data-block-id="798018d596ba275e7d0473aeaf0443d7"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 14;" data-shape-stroke-color="#cc0000" data-shape-stroke-width="3px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 481 36"><defs><clippath id="shape-mask-2-1550464165171"><rect width="481" height="36" rx="0" ry="0"></rect></clippath></defs><rect width="481" height="36" rx="0" ry="0" clip-path="url(#shape-mask-2-1550464165171)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#cc0000" stroke-width="6"></rect></svg></div></div></section><section data-id="1fc704ffe89d5f63abe230b9c63c4ead"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 33px; height: auto;" data-block-id="803d311a0d54de70204c2ba45aedb6fc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>manifest.json</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="9f3da2f620c647cece59a1f27e94a755" style="min-width: 4px; min-height: 4px; width: 883px; height: 556px; left: 39px; top: 142px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1636" data-natural-height="1030" data-lazy-loaded="" data-src="deck-5-12/4b555afa6109edb46a323f34163f16a0.png"></div></div></section><section data-id="aebb0428d9bcd47ba24c5033ba48dcf2"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 8px; height: auto;" data-block-id="b250bfacbc2f8fde210f7e5995d277b0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>registerServiceWorker.js</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="1b9f56ea151db9fe9693c578ef72e579" style="min-width: 4px; min-height: 4px; width: 806px; height: 609px; left: 77px; top: 91px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1788" data-natural-height="1350" data-lazy-loaded="" data-src="deck-5-12/a42c220eec4c977c233f29c86a3f1956.png"></div></div></section><section data-id="dfdacb4b1957dcba8d77251a57c3f3bd"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 0px; height: auto;" data-block-id="bfa2799f43527fab2f49982c5f9d0c02"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>main.js</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="c35082cc9021b51747f0c9c6cf7cb2b7" style="min-width: 4px; min-height: 4px; width: 624px; height: 611px; left: 168px; top: 89px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1274" data-natural-height="1248" style="" data-lazy-loaded="" data-src="deck-5-12/927313d6ab37e213d6c666302ece25d3.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 481px; height: 36px; left: 204px; top: 237px;" data-block-id="6675c60867f987ba3f06bb28a24f999f"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="#cc0000" data-shape-stroke-width="3px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 481 35"><defs><clippath id="shape-mask-3-1550464502254"><rect width="481" height="35" rx="0" ry="0"></rect></clippath></defs><rect width="481" height="35" rx="0" ry="0" clip-path="url(#shape-mask-3-1550464502254)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#cc0000" stroke-width="6"></rect></svg></div></div></section><section data-id="99144b1e326f1f56b7a6c37f8408e373"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 23px; height: auto;" data-block-id="0b4228da56fd6330246a10bbd5606f72"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>app icons</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="26132e3c2b779075ee4db00e88bd7352" style="min-width: 4px; min-height: 4px; width: 563px; height: 571px; left: 199px; top: 129px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1012" data-natural-height="1026" style="" data-lazy-loaded="" data-src="deck-5-12/d91517b6ac0efc0b8953fc2201816d26.png"></div></div></section><section data-id="e21adbd821dc5e10f90a50e4caddecbf">
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 574px; height: auto;" data-block-id="82ec9c83bc88968c1c19dc5f993d53b0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Lighthouse</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="30e527cea9a7aed5627cd16c81028ce0" style="min-width: 4px; min-height: 4px; width: 960px; height: 163px; left: 0px; top: 269px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1956" data-natural-height="332" data-lazy-loaded="" data-src="deck-5-12/2e56e098cd7ea97f8f5740d112c8a173.png"></div></div></section><section data-id="31d50d439df3275f2f2f0d33dd793c38"><div class="sl-block" data-block-type="image" data-block-id="712f922520c3c8dbc711b79bf3abe9d1" style="min-width: 4px; min-height: 4px; width: 758px; height: 700px; left: 101px; top: 0px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1202" data-natural-height="1110" style="" data-lazy-loaded="" data-src="deck-5-12/eb69d8b426e015c041974edee42072e5.png"></div></div></section><section data-id="3b7f4ccb6f66f07775772c1879e9e092"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="e1b5c3b63ff92aa93988295a3515752f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>I am NOT a PWA</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="3a4599f9372b14a49027d36e68b0c4bd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12;">
+<p><a href="https://vue-i-am-not-a-pwa.firebaseapp.com/" target="_blank">https://vue-i-am-not-a-pwa.firebaseapp.com/</a></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="ba86c9eb645f9a4be0588f3df2f32e4b" style="min-width: 4px; min-height: 4px; width: 300px; height: 246px; left: 330px; top: 384px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img data-natural-width="300" data-natural-height="246" style="" data-lazy-loaded="" data-src="deck-5-12/ddb4c7a65014d67892a09cc6554f8a4d.gif"></div></div></section><section data-id="5cd922a4355c48e59a066d8ba6d9d3c3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="42f347f68580ef6e884f6bf1a54955d8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>I am a PWA</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="8271776522f9995178ce71a71ddfa8ad"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12;" dir="ui">
+<p><a href="https://vue-i-am-a-pwa.firebaseapp.com/" target="_blank">https://vue-i-am-a-pwa.firebaseapp.com/</a></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="29e59e682fb74bce5dbb82fff7bf63d6" style="min-width: 4px; min-height: 4px; width: 500px; height: 226px; left: 230px; top: 420px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img style="" data-natural-width="500" data-natural-height="226" data-lazy-loaded="" data-src="deck-5-12/027cfb47168db6a1a721cb3694f3bdf3.gif"></div></div></section><section data-id="c8cc438e3c961a6b7d3cfc646d0bf524"><div class="sl-block" data-block-type="video" data-block-id="e111340892d36533353c4d9904e600d3" style="min-width: 30px; min-height: 30px; width: 274px; height: 537px; left: 346px; top: 87px;"><div class="sl-block-content" style="z-index: 11;" data-media-id="5792478" data-video-thumb="https://s3.amazonaws.com/media-p.slid.es/videos/887386/0AJN1KIP/vue_pwa_phone_demo_thumb_00001.jpg"><video playsinline="" controls="controls" poster="https://s3.amazonaws.com/media-p.slid.es/videos/887386/0AJN1KIP/vue_pwa_phone_demo_thumb_00001.jpg" loop="loop" muted="" data-autoplay="" data-lazy-loaded="" data-paused-by-reveal="" data-src="deck-5-12/b54d01594e5784f387c378bc85326d62.mp4"></video></div></div></section><section data-id="29601ff0b49d0a1dd9b3470442467369">
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 43px; height: auto;" data-block-id="18ef875b36dbf8392d5dad83964f5360"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><span style="font-size:67.5px">vue.config.js</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="dbe065d43fe784529a45437e182a3b34" style="min-width: 4px; min-height: 4px; width: 806px; height: 212px; left: 77px; top: 244px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1176" data-natural-height="310" style="" data-lazy-loaded="" data-src="deck-5-12/9544578fe283cce1415333ac51d3ae2f.png"></div></div></section><section data-id="34a4f581270388691dbb3d532b298565">
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 66px; height: auto;" data-block-id="da952bc7bced4fdd7ca16aefaccf2f2b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2><span style="font-size:51.3px">service-worker.js</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="c77e0c83ce23fcaf00845ea7cb13cf7a" style="min-width: 4px; min-height: 4px; width: 960px; height: 196px; left: 0px; top: 252px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1754" data-natural-height="358" data-lazy-loaded="" data-src="deck-5-12/c21daf86b0ab6acf34e17087f12b7e51.png"></div></div></section><section data-id="de0361f0928ec61db87413bb7794953d"><div class="sl-block" data-block-type="text" style="width: 869px; left: 46px; top: 66px; height: auto;" data-block-id="7f7eba071b91e51c40765eb88abf663b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2 style="color:rgb(17, 17, 17)"><span style="font-size:0.9em">registerServiceWorker.js</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="4b556f7456fb63e1ffcb6a4c15c6d270" style="min-width: 4px; min-height: 4px; width: 960px; height: 389px; left: 0px; top: 210px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1684" data-natural-height="682" style="" data-lazy-loaded="" data-src="deck-5-12/572be2a968d7b077986afe46b6927cdf.png"></div></div></section><section data-id="3607fdb127339848c0c0011e1c01b025">
+<div class="sl-block" data-block-type="image" data-block-id="5cdb17f3e7f04dbb886766596a8f88a2" style="min-width: 4px; min-height: 4px; width: 937px; height: 569px; left: 12px; top: 131px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1692" data-natural-height="1350" style="left: 0px; top: 0px; width: 937px; height: 748px;" data-lazy-loaded="" data-crop-x="0" data-crop-y="0" data-crop-width="1" data-crop-height="0.760695" data-src="deck-5-12/c065dd24fc6e6984b2f025d072134281.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 869px; left: 46px; top: 33px; height: auto;" data-block-id="03ffc4334db0bfd6ff543ec0269c8d34"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2 style="color:rgb(17, 17, 17)"><span style="font-size:0.9em">registerServiceWorker.js (cont'd)</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 677px; height: 106px; left: 88px; top: 570px;" data-block-id="107011e905d6f55e19b611d096eec980"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="#cc0000" data-shape-stroke-width="3px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 676 106"><defs><clippath id="shape-mask-1-1550465979770"><rect width="676" height="106" rx="0" ry="0"></rect></clippath></defs><rect width="676" height="106" rx="0" ry="0" clip-path="url(#shape-mask-1-1550465979770)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#cc0000" stroke-width="6"></rect></svg></div></div></section><section data-id="37c929449cd4031ada9003f648781dc5"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76px; top: 266px; height: auto;" data-block-id="b48a456e709a5c61021ad66805f33fa5"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Let's see it in action</h1>
+</div></div></section><section data-id="46d58ac574a9e13a61d4f45c4f86cd55" data-background-iframe="https://pwa.rocks/" data-background-interactive="true">
+</section><section data-id="b353d0c18358ee6f02ebffd1017494a8"><div class="sl-block" data-block-type="image" data-block-id="822f258b67b5dff40a89788f34cc422b" style="min-width: 4px; min-height: 4px; width: 305px; height: 238px; left: 95px; top: 210px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img data-natural-width="237" data-natural-height="185" style="" data-lazy-loaded="" data-src="deck-5-12/741a684e3358a3ad577d11eb9f91c8d4.gif"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="0f4d8ec20ac3b480343cd4a52ca10cd5" style="min-width: 4px; min-height: 4px; width: 347px; height: 230px; left: 560px; top: 470px;"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="3"><img style="" data-natural-width="302" data-natural-height="200" data-lazy-loaded="" data-src="deck-5-12/30b68d31d370d7d6b0ed175b458eafab.gif"></div></div>
+
+<div class="sl-block" data-block-type="image" data-block-id="d1b1e7f85734e4f296541f32635c6ab5" style="min-width: 4px; min-height: 4px; width: 307px; height: 230px; left: 94px; top: 470px;"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="2"><img style="" data-natural-width="320" data-natural-height="240" data-lazy-loaded="" data-src="deck-5-12/5c123de6c30cf684d2323792d2364515.gif"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="697d52bfb79b3b78338782af75e5fb04" style="min-width: 4px; min-height: 4px; width: 363px; height: 137px; left: 299px; top: 2px;"><div class="sl-block-content" style="z-index: 15;"><img data-natural-width="1000" data-natural-height="377" style="" data-lazy-loaded="" data-src="deck-5-12/5fb63e0b747f996d4dc920861c1016f1.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="94e1a6375611c8e3fe89a9d40a7127da" style="min-width: 4px; min-height: 4px; width: 346px; height: 238px; left: 560px; top: 210px;"><div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="1"><img data-natural-width="480" data-natural-height="330" style="" data-lazy-loaded="" data-src="deck-5-12/6463da378c7991484c7d5ce9b53340a2.gif"></div></div></section><section data-id="3c0a341449ed90d431fa2a3a4fa643fc"><div class="sl-block" data-block-type="image" data-block-id="952b12ef2c2d0acf0d3fcc98171893b1" style="min-width: 4px; min-height: 4px; width: 960px; height: 641px; left: 0px; top: 30px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1280" data-natural-height="854" style="" data-lazy-loaded="" data-src="deck-5-12/0c36f3b0bd528a9794a4c6ae84f08505.jpg"></div></div></section><section data-id="e3f661206c69637acc94587de06e7bae"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 113px; height: auto;" data-block-id="f08a3e38b663d5127d537ebab46aeb01"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Questions?</h1>
+</div></div>
+</section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":1433900,"slug":"deck-5-12","title":"Service Workers - ByteConf 2019","description":"ByteConf 2019 - Avindra talk","width":960,"height":700,"visibility":"all","published_at":"2019-03-23T18:28:43.642Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/8c9938ac8828e11f53ef167248ae9bf8/thumb.jpg?1550952718","view_count":0,"user":{"id":887386,"username":"avindrafernando","name":"Avindra Fernando","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-M3NEgrSsLQE/AAAAAAAAAAI/AAAAAAAAAng/gI6HoGNo1s0/photo.jpg","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":1364586,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"silver-green","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":53,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":1,"data_updated_at":1552211289751,"font_typekit":null,"font_google":null,"notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 960,
+				height: 700,
+				margin: 0.05,
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: false,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/reveal-plugins/zoom/zoom.js', async: true }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
